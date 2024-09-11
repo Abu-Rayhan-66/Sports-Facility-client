@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face{
+    font-family: "Bebas-Neue";
+    src: local(bebasNeue-Regular),
+   url('./assets/fonts/BebasNeue-Regular.ttf')  format("truetype")
+  
+} */
