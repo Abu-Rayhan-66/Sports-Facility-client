@@ -8,6 +8,14 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ProtectedRoute from "../Layouts/MainLayout/ProtectedRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
+import CreateFacility from "../Pages/Dashboard/CreateFacility/CreateFacility";
+import AllFacility from "../Pages/Dashboard/AllFacility/AllFacility";
+import BookingManagement from "../Pages/Dashboard/BookingManagement/BookingManagement";
+import AddAdmin from "../Pages/Dashboard/AddAdmin/AddAdmin";
+import Facility from "../Pages/Facility/Facility";
+import FacilityDetails from "../Pages/FacilityDetails/FacilityDetails";
 
 
 
@@ -37,9 +45,43 @@ const Router = createBrowserRouter([
         {
           path:"/register",
             element:<Register></Register>
+        },
+        {
+          path:"/facility",
+            element:<Facility></Facility>
+        },
+        {
+          path:"/facility/:id",
+            element:<FacilityDetails></FacilityDetails>
         }
       ]
     },
+    {
+      path:"/dashboard",
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:"/dashboard/bookings",
+          element:<MyBookings></MyBookings>
+        },
+        {
+          path:"/dashboard/createFacility",
+          element:<CreateFacility></CreateFacility>
+        },
+        {
+          path:"/dashboard/allFacility",
+          element:<AllFacility></AllFacility>
+        },
+        {
+          path:"/dashboard/bookingManagement",
+          element:<BookingManagement></BookingManagement>
+        },
+        {
+          path:"/dashboard/addAdmin",
+          element:<AddAdmin></AddAdmin>
+        }
+      ]
+    }
   ]);
 
   export default Router

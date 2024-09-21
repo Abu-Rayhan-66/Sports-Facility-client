@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           home
@@ -27,19 +27,31 @@ const Navbar = () => {
       </h2>
       <h2 className="text-white font-medium uppercase text-lg m-3">
         <NavLink to="/about" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }>about</NavLink>
       </h2>
       <h2 className="text-white font-medium uppercase text-lg m-3">
         <NavLink
           to="/contact"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           contact
         </NavLink>
       </h2>
+      {
+        user ?  <h2 className="text-white font-medium uppercase text-lg m-3">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+          }
+        >
+          Dashboard
+        </NavLink>
+      </h2>:""
+      }
     </>
   );
 
@@ -83,20 +95,21 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#1c9991] rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {navigationButton}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          {user ? <a className="btn btn-ghost text-xl text-white">{user.name}</a> : ""}
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navigationButton}</ul>
         </div>
         <div className="navbar-end">
         {user ? <button onClick={handleLOgOut} className="py-2 px-4 text-white bg-black text-lg font-medium rounded-md"><NavLink to="/login">SignOut</NavLink></button>  :<button className="py-2 px-4 text-white bg-black text-lg font-medium rounded-md"><NavLink to="/login">Login</NavLink></button> 
-
+             
         }
+
         </div>
       </div>
     </nav>

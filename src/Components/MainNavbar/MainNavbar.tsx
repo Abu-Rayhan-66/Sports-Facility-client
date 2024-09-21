@@ -17,7 +17,7 @@ const MainNavbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           home
@@ -27,7 +27,7 @@ const MainNavbar = () => {
         <NavLink
           to="/about"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           about
@@ -37,19 +37,31 @@ const MainNavbar = () => {
         <NavLink
           to="/contact"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           contact
         </NavLink>
       </h2>
+      {
+        user ?  <h2 className="text-white font-medium uppercase text-lg m-3">
+        <NavLink
+          to="/dashboard"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+          }
+        >
+          Dashboard
+        </NavLink>
+      </h2>:""
+      }
     </>
   );
 
   return (
     <div>
       <nav
-        className={`sticky top-0 w-full z-50  bg-gradient-to-l from-[#083f53] to-[#1c9991] border-b-[1px] border-slate-400
+        className={`fixed top-0 w-full z-50  bg-gradient-to-l from-[#083f53] to-[#1c9991] border-b-[1px] border-slate-400
       }`}
       >
         <div className="navbar bg-transparent">
@@ -77,12 +89,12 @@ const MainNavbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-[#1c9991] rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 {navigationButton}
               </ul>
             </div>
-            {user ? <a className="btn btn-ghost text-xl"></a> : ""}
+            {user ? <a className="btn btn-ghost text-xl text-white">{user.name}</a> : ""}
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navigationButton}</ul>

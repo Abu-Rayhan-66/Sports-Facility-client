@@ -8,3 +8,13 @@
    url('./assets/fonts/BebasNeue-Regular.ttf')  format("truetype")
   
 } */
+
+/* .background-gradient{
+    background: radial-gradient(
+        circle at top centre,
+        hsla(#11676e , 80%, 60%,0.5%)0%,
+        hsla(#11676e , 80%, 0%, 0%)50%,
+        hsla(#11676e , 80%, 0%, 0%)100%,
+       
+    );
+} */

@@ -1,49 +1,49 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { useSignUserMutation } from "../../Redux/Features/auth/authApi";
 import { toast } from "sonner";
+import { useCreateFacilityMutation } from "../../../Redux/Features/facility/facility.Api";
 
-type Inputs = {
+
+export type Inputs = {
+  _id:string
   name: string;
-  email: string;
-  password: string;
-  phone: string;
-  address: string;
+  description: string;
+  pricePerHour: number;
+  location: string;
+  image: string;
 };
 
-const Register = () => {
-  const [signup] = useSignUserMutation();
+const CreateFacility = () => {
+  const [facility] = useCreateFacilityMutation()
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const toastId = toast.loading("Creating User");
+
+  const onSubmit: SubmitHandler<Inputs> =async (data) => {
+    const toastId = toast.loading("Creating Facility");
     try {
       const formData = {
-        name:data.name ,
-        email:data.email ,
-        password:data.password ,
-        phone:data.phone ,
-        role: "user", 
-        address: data.address
-        };
+        name: data.name,
+        description: data.description,
+        pricePerHour: Number(data.pricePerHour),
+        location: data.location,
+        image: data.image,
+      };
       console.log(formData);
-      signup(formData);
-      toast.success("User created successfully", { id: toastId });
+      await facility(formData);
+      toast.success("Facility  created successfully", { id: toastId });
     } catch (err) {
+      console.error("Create facility error:", err)
       toast.error("Something went Wrong", { id: toastId });
     }
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-6">
+    <div className="hero bg-base-200 h-[90vh] ">
       <div className="hero-content flex-col ">
         <div className="card bg-base-100 w-screen max-w-sm shrink-0 shadow-2xl">
-
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -56,78 +56,71 @@ const Register = () => {
                 className="input input-bordered"
               />
               <div className="h-2">
-                {errors.name && <span>This field is required</span>}
+                {errors.name && <span>Name is required</span>}
               </div>
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text">Description</span>
               </label>
               <input
-                {...register("email", { required: true })}
-                type="email"
-                placeholder="Email"
-                className="input input-bordered"
-              />
-              <div className="h-2">
-                {errors.email && <span>This field is required</span>}
-              </div>
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <input
-                {...register("password", { required: true })}
-                type="password"
-                placeholder="Password"
-                className="input input-bordered"
-              />
-              <div className="h-2">
-                {errors.password && <span>This field is required</span>}
-              </div>
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Phone</span>
-              </label>
-              <input
-                {...register("phone", { required: true })}
+                {...register("description", { required: true })}
                 type="text"
-                placeholder="Phone"
+                placeholder="Description"
                 className="input input-bordered"
               />
               <div className="h-2">
-                {errors.phone && <span>This field is required</span>}
+                {errors.description && <span>Description is required</span>}
               </div>
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Address</span>
+                <span className="label-text">Price Per Hour</span>
               </label>
               <input
-                {...register("address", { required: true })}
+                {...register("pricePerHour", { required: true })}
                 type="text"
-                placeholder="Address"
+                placeholder="Price Per Hour"
                 className="input input-bordered"
               />
               <div className="h-2">
-                {errors.address && (
-                  <span className="text-sm">address is required</span>
+                {errors.pricePerHour && <span>Price Per Hour is required</span>}
+              </div>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Location</span>
+              </label>
+              <input
+                {...register("location", { required: true })}
+                type="text"
+                placeholder="Location"
+                className="input input-bordered"
+              />
+              <div className="h-2">
+                {errors.location && <span>Location is required</span>}
+              </div>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Image</span>
+              </label>
+              <input
+                {...register("image", { required: true })}
+                type="text"
+                placeholder="Image"
+                className="input input-bordered"
+              />
+              <div className="h-2 mb-4">
+                {errors.image && (
+                  <span className="text-sm">Image is required</span>
                 )}
               </div>
-              <label className="label">
-                <h4>
-                  Already have an account?{" "}
-                  <Link to="/login" className="text-red-400">
-                    Login
-                  </Link>
-                </h4>
-              </label>
+              
             </div>
             <div className="form-control ">
               <button type="submit" className="btn btn-primary">
-                Register
+                Create
               </button>
             </div>
           </form>
@@ -137,4 +130,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default CreateFacility;

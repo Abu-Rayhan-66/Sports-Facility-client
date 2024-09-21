@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { useSignUserMutation } from "../../Redux/Features/auth/authApi";
+import { useSignUserMutation } from "../../../Redux/Features/auth/authApi";
 import { toast } from "sonner";
+
 
 type Inputs = {
   name: string;
@@ -11,7 +11,7 @@ type Inputs = {
   address: string;
 };
 
-const Register = () => {
+const AddAdmin = () => {
   const [signup] = useSignUserMutation();
 
   const {
@@ -19,18 +19,18 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
-  
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const toastId = toast.loading("Creating User");
     try {
       const formData = {
-        name:data.name ,
-        email:data.email ,
-        password:data.password ,
-        phone:data.phone ,
-        role: "user", 
-        address: data.address
-        };
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        phone: data.phone,
+        role: "admin",
+        address: data.address,
+      };
       console.log(formData);
       signup(formData);
       toast.success("User created successfully", { id: toastId });
@@ -40,10 +40,9 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-6">
+    <div className="hero bg-base-200 h-[90vh]">
       <div className="hero-content flex-col ">
         <div className="card bg-base-100 w-screen max-w-sm shrink-0 shadow-2xl">
-
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -111,23 +110,16 @@ const Register = () => {
                 placeholder="Address"
                 className="input input-bordered"
               />
-              <div className="h-2">
+              <div className="h-2 mb-4">
                 {errors.address && (
                   <span className="text-sm">address is required</span>
                 )}
               </div>
-              <label className="label">
-                <h4>
-                  Already have an account?{" "}
-                  <Link to="/login" className="text-red-400">
-                    Login
-                  </Link>
-                </h4>
-              </label>
+              
             </div>
             <div className="form-control ">
               <button type="submit" className="btn btn-primary">
-                Register
+                Create Admin
               </button>
             </div>
           </form>
@@ -137,4 +129,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default AddAdmin;

@@ -14,7 +14,6 @@ export interface User {
  
 }
 
-// Define the state type with userData as User or null
 type TAuthState = {
   user: User | null;
   token: string | null;
