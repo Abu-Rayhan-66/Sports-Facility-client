@@ -2,11 +2,13 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import MainNavbar from "../../Components/MainNavbar/MainNavbar";
 import { useAppSelector } from "../../Redux/hooks";
 import { RootState } from "../../Redux/store";
+import { verifyToken } from "../../utils/verifyToken";
 
 const Dashboard = () => {
   const location = useLocation();
   const user = useAppSelector((state: RootState) => state.auth.userData);
   const token = useAppSelector((state: RootState) => state.auth.token);
+  const decodedToken = verifyToken(token!)
   console.log(token)
 
   return (
@@ -15,7 +17,7 @@ const Dashboard = () => {
       
       <div className="md:flex mt-[64px] md:mt-[65px] lg:mt-[84px]">
         <div
-          className="md:flex-1 w-full h-12 md:h-[90vh] sticky top-[64px] md:top-[65px] lg:top-[86px] left-0 bg-slate-300 z-[50]"
+          className="md:flex-1 w-full h-12 md:h-[88vh] sticky top-[64px] md:top-[65px] lg:top-[86px] left-0 bg-gradient-to-tl from-[#083f53] to-[#1c9991] z-[40]"
         >
           {user?.role === "user" ? (
             <div className="flex justify-center sm:flex sm:justify-center sm:gap-2 md:flex-col">
@@ -27,7 +29,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -41,7 +43,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -59,7 +61,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -73,7 +75,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -86,7 +88,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -99,7 +101,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -112,7 +114,7 @@ const Dashboard = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "bg-purple-600 text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-red-600"
+                    ? "bg-[#03AED2] text-white p-2 px-3 text-xs md:text-base md:font-semibold mb-2 block text-center border-l-4 border-[#68D2E8]"
                     : ""
                 }
               >
@@ -128,9 +130,13 @@ const Dashboard = () => {
             < >
               {
                token   &&
-                <div className="mx-auto mt-10 break-words h-[30vh] max-w-2xl bg-red-500">
-                  <h2>Welcome {user!.name}</h2>
-                  <h2 className="p-7">Welcome {token}</h2>
+                <div className="relative rounded-md  md:flex md:justify-between md:items-center mx-auto mt-10 break-words h-[50vh] max-w-3xl bg-[#1c9991]">
+                  <div className="">
+                  <h2 className="text-white font-medium text-xl ml-4">Welcome back, {user!.name}</h2>
+                  </div>
+                  <div>
+                    <img className="h-5/6 w-2/3 absolute bottom-0 right-0" src="https://i.ibb.co.com/V3Dstv4/9439678-removebg-preview.png" alt="" />
+                  </div>
                 </div>
               }
             </>

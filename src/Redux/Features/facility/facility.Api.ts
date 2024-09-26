@@ -14,9 +14,9 @@ const facilityApi = baseApi.injectEndpoints({
     }),
 
     getAllFacility: builder.query({
-      query: (searchTerm = "") => ({
+      query: ({searchTerm = "", minPrice = "", maxPrice = ""}) => ({
         url: "/api/facility",
-        params: { searchTerm },
+        params: { searchTerm, minPrice, maxPrice },
         method: "GET",
       }),
       providesTags: ["facility"],
@@ -46,13 +46,7 @@ const facilityApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["facility"],
     }),
-    getAllBooking: builder.query({
-      query: (id) => ({
-        url: `/api/facility/${id}`,
-        method: "GET",
-      }),
-      providesTags: ["facility"],
-    }),
+    
   }),
 });
 
@@ -61,7 +55,6 @@ export const {
   useGetAllFacilityQuery,
   useUpdateFacilityMutation,
   useDeleteFacilityMutation,
-  useGetAllBookingQuery, 
   useGetSingleFacilityQuery
   
 } = facilityApi;

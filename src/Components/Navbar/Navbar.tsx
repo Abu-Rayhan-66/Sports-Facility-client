@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           home
@@ -27,14 +27,14 @@ const Navbar = () => {
       </h2>
       <h2 className="text-white font-medium uppercase text-lg m-3">
         <NavLink to="/about" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
           }>about</NavLink>
       </h2>
       <h2 className="text-white font-medium uppercase text-lg m-3">
         <NavLink
           to="/contact"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           contact
@@ -45,7 +45,7 @@ const Navbar = () => {
         <NavLink
           to="/dashboard"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#FF444A] border-2 border-red-500 rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2]  rounded-tl-xl rounded-br-xl p-1" : ""
           }
         >
           Dashboard
@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#1c9991] rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-[#1c9991] rounded-box z-[50] mt-3 w-52 p-2 shadow"
             >
               {navigationButton}
             </ul>
@@ -106,7 +106,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navigationButton}</ul>
         </div>
         <div className="navbar-end">
-        {user ? <button onClick={handleLOgOut} className="py-2 px-4 text-white bg-black text-lg font-medium rounded-md"><NavLink to="/login">SignOut</NavLink></button>  :<button className="py-2 px-4 text-white bg-black text-lg font-medium rounded-md"><NavLink to="/login">Login</NavLink></button> 
+        {user ? <button onClick={handleLOgOut} className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium"><NavLink to="/login">SignOut</NavLink></button>  :<button className="py-1 px-4 rounded-tl-md rounded-br-md text-white bg-[#03AED2] text-lg font-medium "><NavLink to="/login">Login</NavLink></button> 
              
         }
 

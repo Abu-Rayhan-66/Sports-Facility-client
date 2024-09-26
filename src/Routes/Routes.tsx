@@ -16,6 +16,8 @@ import BookingManagement from "../Pages/Dashboard/BookingManagement/BookingManag
 import AddAdmin from "../Pages/Dashboard/AddAdmin/AddAdmin";
 import Facility from "../Pages/Facility/Facility";
 import FacilityDetails from "../Pages/FacilityDetails/FacilityDetails";
+import Booking from "../Pages/Booking/Booking";
+import PaymentPage from "../Pages/PaymentPage/PaymentPage";
 
 
 
@@ -51,8 +53,16 @@ const Router = createBrowserRouter([
             element:<Facility></Facility>
         },
         {
-          path:"/facility/:id",
+          path:"/facilityDetails/:id",
             element:<FacilityDetails></FacilityDetails>
+        },
+        {
+          path:"/booking/:id",
+            element:<Booking></Booking>
+        },
+        {
+          path:"/payment/:id",
+            element:<PaymentPage></PaymentPage>
         }
       ]
     },

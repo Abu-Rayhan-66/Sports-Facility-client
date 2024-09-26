@@ -4,6 +4,7 @@ import { RootState } from "../../store";
 
 
 export interface User {
+  id(id: any): { data: any; isLoading: any; error: any; };
   _id: string;
   name: string;
   email: string;

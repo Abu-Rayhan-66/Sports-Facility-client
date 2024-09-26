@@ -35,7 +35,7 @@ const FacilityDetails = () => {
              <h2 className="card-title">{facility.name}</h2>
              <p>Price per hours: {facility.pricePerHour}</p>
              <div className="card-actions justify-end">
-               <button className="btn btn-primary"><Link to={"/facilityDetails"}>View Details</Link> </button>
+               <button className="btn btn-primary"><Link to={`/booking/${facility._id}`}>View Details</Link> </button>
              </div>
            </div>
          </div>

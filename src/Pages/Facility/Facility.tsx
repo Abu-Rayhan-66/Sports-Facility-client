@@ -7,6 +7,7 @@ const Facility = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [minPrice, setMinPrice] = useState<number | "">("");
   const [maxPrice, setMaxPrice] = useState<number | "">("");
+  console.log(searchTerm, minPrice, maxPrice)
 
   const { data, isLoading, error } = useGetAllFacilityQuery({
     searchTerm,
@@ -74,7 +75,7 @@ const Facility = () => {
                 <h2 className="card-title">{item.name}</h2>
                 <p>Price per hour: {item.pricePerHour}</p>
                 <div className="card-actions justify-end">
-                  <Link to={`/facility/${item._id}`}>
+                  <Link to={`/facilityDetails/${item._id}`}>
                     <button className="btn btn-primary">View Details</button>
                   </Link>
                 </div>
