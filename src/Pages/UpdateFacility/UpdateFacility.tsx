@@ -1,47 +1,75 @@
+import { useParams } from "react-router-dom";
+import { useGetSingleFacilityQuery, useUpdateFacilityMutation } from "../../Redux/Features/facility/facility.Api";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { useCreateFacilityMutation } from "../../../Redux/Features/facility/facility.Api";
+// import { useState } from "react";
 
 
 export type Inputs = {
-  _id:string
-  name: string;
-  description: string;
-  pricePerHour: number;
-  location: string;
-  image: string;
-};
-
-const CreateFacility = () => {
-  const [facility] = useCreateFacilityMutation()
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>();
-
-  const onSubmit: SubmitHandler<Inputs> =async (data) => {
-    const toastId = toast.loading("Creating Facility");
-    try {
-      const formData = {
-        name: data.name,
-        description: data.description,
-        pricePerHour: Number(data.pricePerHour),
-        location: data.location,
-        image: data.image,
-      };
-      console.log(formData);
-      await facility(formData);
-      toast.success("Facility  created successfully", { id: toastId });
-    } catch (err) {
-      console.error("Create facility error:", err)
-      toast.error("Something went Wrong", { id: toastId });
-    }
+    _id:string
+    name: string;
+    description: string;
+    pricePerHour: number;
+    location: string;
+    image: string;
   };
 
-  return (
-    <div className="hero bg-white h-[90vh] ">
+const UpdateFacility = () => {
+
+    const {id} = useParams()
+  
+    const {data, isLoading, error} = useGetSingleFacilityQuery(id)
+    // const [facilityId, setFacilityId] = useState("")
+    const [updateFacility] = useUpdateFacilityMutation()
+
+
+    // setFacilityId(data?.data?._id)
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm<Inputs>();
+    
+      const onSubmit: SubmitHandler<Inputs> =async (data) => {
+        const toastId = toast.loading("Creating Facility");
+        try {
+          const formData = {
+            name: data.name,
+            description: data.description,
+            pricePerHour: Number(data.pricePerHour),
+            location: data.location,
+            image: data.image,
+          };
+          console.log(formData);
+          await updateFacility({
+            id:id, 
+          data: formData,
+          });
+          toast.success("Facility  created successfully", { id: toastId });
+        } catch (err) {
+          console.error("Create facility error:", err)
+          toast.error("Something went Wrong", { id: toastId });
+        }
+      };
+
+    console.log(data)
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: Something went wrong</div>;
+  }
+
+  if (!data || data.length === 0) {
+    return <div>No facilities found</div>;
+  }
+
+  const facility = data?.data
+
+    return (
+        <div className="hero bg-white h-[90vh] mt-24">
       <div className="hero-content flex-col ">
         <div className="card bg-base-100 w-screen max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -54,6 +82,7 @@ const CreateFacility = () => {
                 type="text"
                 placeholder="Name"
                 className="input input-bordered"
+                defaultValue={facility.name}
               />
               <div className="h-2">
                 {errors.name && <span>Name is required</span>}
@@ -68,6 +97,7 @@ const CreateFacility = () => {
                 type="text"
                 placeholder="Description"
                 className="input input-bordered"
+                defaultValue={facility.description}
               />
               <div className="h-2">
                 {errors.description && <span>Description is required</span>}
@@ -82,6 +112,7 @@ const CreateFacility = () => {
                 type="text"
                 placeholder="Price Per Hour"
                 className="input input-bordered"
+                defaultValue={facility.pricePerHour}
               />
               <div className="h-2">
                 {errors.pricePerHour && <span>Price Per Hour is required</span>}
@@ -96,6 +127,7 @@ const CreateFacility = () => {
                 type="text"
                 placeholder="Location"
                 className="input input-bordered"
+                defaultValue={facility.location}
               />
               <div className="h-2">
                 {errors.location && <span>Location is required</span>}
@@ -110,6 +142,7 @@ const CreateFacility = () => {
                 type="text"
                 placeholder="Image"
                 className="input input-bordered"
+                defaultValue={facility.image}
               />
               <div className="h-2 mb-4">
                 {errors.image && (
@@ -127,7 +160,7 @@ const CreateFacility = () => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default CreateFacility;
+export default UpdateFacility;

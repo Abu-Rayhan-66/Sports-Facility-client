@@ -14,9 +14,9 @@ const facilityApi = baseApi.injectEndpoints({
     }),
 
     getAllFacility: builder.query({
-      query: ({searchTerm = "", minPrice = "", maxPrice = ""}) => ({
+      query: ({searchTerm = "", minPrice = "", maxPrice = "",page, limit }) => ({
         url: "/api/facility",
-        params: { searchTerm, minPrice, maxPrice },
+        params: { searchTerm, minPrice, maxPrice, page, limit },
         method: "GET",
       }),
       providesTags: ["facility"],

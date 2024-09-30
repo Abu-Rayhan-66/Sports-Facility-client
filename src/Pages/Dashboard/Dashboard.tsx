@@ -2,14 +2,12 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import MainNavbar from "../../Components/MainNavbar/MainNavbar";
 import { useAppSelector } from "../../Redux/hooks";
 import { RootState } from "../../Redux/store";
-import { verifyToken } from "../../utils/verifyToken";
 
 const Dashboard = () => {
   const location = useLocation();
   const user = useAppSelector((state: RootState) => state.auth.userData);
   const token = useAppSelector((state: RootState) => state.auth.token);
-  const decodedToken = verifyToken(token!)
-  console.log(token)
+
 
   return (
     <div className="">
@@ -24,7 +22,7 @@ const Dashboard = () => {
               <NavLink
                 to="/dashboard"
                 end
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -38,7 +36,7 @@ const Dashboard = () => {
 
               <NavLink
                 to="/dashboard/bookings"
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -56,7 +54,7 @@ const Dashboard = () => {
               <NavLink
                 to="/dashboard"
                 end
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -70,8 +68,8 @@ const Dashboard = () => {
 
               <NavLink
                 to="/dashboard/createFacility"
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
-                className={({ isActive, isPending }) =>
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
+                className={ ( { isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
@@ -83,7 +81,7 @@ const Dashboard = () => {
               </NavLink>
               <NavLink
                 to="/dashboard/allFacility"
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -96,7 +94,7 @@ const Dashboard = () => {
               </NavLink>
               <NavLink
                 to="/dashboard/bookingManagement"
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -109,7 +107,7 @@ const Dashboard = () => {
               </NavLink>
               <NavLink
                 to="/dashboard/addAdmin"
-                style={{ display: "block", textAlign: "center", padding: "8px" }}
+                style={{ display: "block", textAlign: "center", padding: "8px",color: "white" }}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -130,9 +128,10 @@ const Dashboard = () => {
             < >
               {
                token   &&
-                <div className="relative rounded-md  md:flex md:justify-between md:items-center mx-auto mt-10 break-words h-[50vh] max-w-3xl bg-[#1c9991]">
+                <div className="relative rounded-md  md:flex md:justify-between md:items-center mx-auto mt-10 break-words h-[50vh] max-w-3xl bg-gradient-to-tr from-[#083f53] to-[#1c9991]">
                   <div className="">
                   <h2 className="text-white font-medium text-xl ml-4">Welcome back, {user!.name}</h2>
+                  <h4 className="text-white ml-4 mt-4">Nice to see you again. <br /> Hope you are doing well</h4>
                   </div>
                   <div>
                     <img className="h-5/6 w-2/3 absolute bottom-0 right-0" src="https://i.ibb.co.com/V3Dstv4/9439678-removebg-preview.png" alt="" />

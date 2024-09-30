@@ -24,23 +24,21 @@ const FacilityDetails = () => {
   const facility = data.data
 
     return (
-        <div className="mt-24">
-         <div  className="card card-compact bg-base-100 w-96 shadow-xl">
-           <figure>
-             <img
-               src={facility.image}
-               alt="Facility image" />
-           </figure>
-           <div className="card-body">
-             <h2 className="card-title">{facility.name}</h2>
-             <p>Price per hours: {facility.pricePerHour}</p>
-             <div className="card-actions justify-end">
-               <button className="btn btn-primary"><Link to={`/booking/${facility._id}`}>View Details</Link> </button>
-             </div>
-           </div>
-         </div>
-        
-    </div>
+      <div className=" mt-24 max-w-4xl mx-auto bg-slate-300 rounded-md">
+      <div className="md:flex gap-6">
+       <div className="flex-1">
+       <img className="h-96 rounded-md w-full" src={facility.image} alt="" />
+       </div>
+       <div className="mt-16 flex-1">
+        <h2 className="text-xl font-medium text-white">{facility.name}</h2>
+        <h4 className="text-base mt-4 text-white">{facility.location}</h4>
+        <h4 className="text-base text-white">{facility.pricePerHour}</h4>
+        <h4 className="text-base text-white">{facility.description}</h4>
+        <button className="py-1 px-4 mb-4 mt-3  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium"><Link to={`/booking/${facility._id}`}>View Details</Link> </button>
+       </div>
+      </div>
+     
+ </div>
     );
 };
 

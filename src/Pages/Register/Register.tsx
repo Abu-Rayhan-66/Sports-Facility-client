@@ -40,7 +40,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero bg-base-200 min-h-screen mt-6">
+    <div className="hero bg-white min-h-screen mt-6">
       <div className="hero-content flex-col ">
         <div className="card bg-base-100 w-screen max-w-sm shrink-0 shadow-2xl">
 
@@ -52,8 +52,8 @@ const Register = () => {
               <input
                 {...register("name", { required: true })}
                 type="text"
-                placeholder="Name"
-                className="input input-bordered"
+                placeholder=" Name"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.name && <span>This field is required</span>}
@@ -66,8 +66,8 @@ const Register = () => {
               <input
                 {...register("email", { required: true })}
                 type="email"
-                placeholder="Email"
-                className="input input-bordered"
+                placeholder=" Email"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.email && <span>This field is required</span>}
@@ -80,8 +80,8 @@ const Register = () => {
               <input
                 {...register("password", { required: true })}
                 type="password"
-                placeholder="Password"
-                className="input input-bordered"
+                placeholder=" Password"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.password && <span>This field is required</span>}
@@ -94,8 +94,8 @@ const Register = () => {
               <input
                 {...register("phone", { required: true })}
                 type="text"
-                placeholder="Phone"
-                className="input input-bordered"
+                placeholder=" Phone"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.phone && <span>This field is required</span>}
@@ -108,8 +108,8 @@ const Register = () => {
               <input
                 {...register("address", { required: true })}
                 type="text"
-                placeholder="Address"
-                className="input input-bordered"
+                placeholder=" Address"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.address && (

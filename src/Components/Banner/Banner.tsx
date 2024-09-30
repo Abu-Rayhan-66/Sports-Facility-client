@@ -9,8 +9,8 @@ const Banner = () => {
              
         </div>
         <div className="">
-            <h2 className="text-[#03AED2] text-3xl font-medium uppercase mb-3 ">Welcome to Plantis</h2>
-            <p className="text-white ">Plantis is a <span className="text-[#03AED2] ">sport booking Platform</span> where people can rent <br />
+            <h2 className="text-[#03AED2] text-3xl font-medium uppercase mb-3 ">Welcome to SportUp</h2>
+            <p className="text-white ">SportUp is a <span className="text-[#03AED2] ">sport booking Platform</span> where people can rent <br />
              different kind of playing ground for a better and healthy life.</p>
             <button className="mt-6  py-1 px-4 rounded-tl-md rounded-br-md bg-[#03AED2] text-xl font-medium text-white "><Link to={"/facility"} >Get Started</Link></button>
         </div>

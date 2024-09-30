@@ -12,16 +12,18 @@ const bookingApi = baseApi.injectEndpoints({
             providesTags: ["booking"],
           }),
           getAllBooking: builder.query({
-            query: () => ({
+            query: ({page, limit}) => ({
               url: `/api/bookings`,
+              params: { page, limit },
               method: "GET",
             }),
             providesTags: ["facility"],
           }),
 
           getSpecificUserBooking: builder.query({
-            query: () => ({
-              url: `/api/bookings/user`,
+            query: ({userId, page, limit}) => ({
+              url: `/api/bookings/${userId}`,
+              params: { page, limit },
               method: "GET",
             }),
             providesTags: ["booking"],
@@ -34,7 +36,7 @@ const bookingApi = baseApi.injectEndpoints({
             }),
             providesTags: ["booking"],
           }),
-
+      
           createBooking: builder.mutation({
             query: (data) => ({
               
@@ -42,6 +44,14 @@ const bookingApi = baseApi.injectEndpoints({
               method: "POST",
               body: data,
               
+            }),
+            invalidatesTags: ["booking"],
+          }),
+
+          cancelBooking: builder.mutation({
+            query: (id) => ({
+              url: `/api/bookings/${id}`,
+              method: "DELETE",
             }),
             invalidatesTags: ["booking"],
           }),
@@ -54,7 +64,8 @@ export const {
     useCreateBookingMutation,
     useGetAllBookingQuery,
     useGetSpecificUserBookingQuery,
-    useGetSingleBookingQuery
+    useGetSingleBookingQuery,
+    useCancelBookingMutation
 
     
   } = bookingApi;

@@ -49,7 +49,7 @@ const Login = () => {
                 {...register("email", { required: true })}
                 type="email"
                 placeholder="Email"
-                className="p-2 rounded-md border-[1px] focus:border-[#1b918b] focus:outline-none  border-black"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.email && <span>This field is required</span>}
@@ -64,7 +64,7 @@ const Login = () => {
                 {...register("password", { required: true })}
                 type="password"
                 placeholder="Password"
-                className="p-2 rounded-md border-[1px] focus:border-[#1b918b] focus:outline-none  border-black"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.password && <span>This field is required</span>}

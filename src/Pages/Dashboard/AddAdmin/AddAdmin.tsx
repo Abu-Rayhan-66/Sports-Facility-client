@@ -40,7 +40,7 @@ const AddAdmin = () => {
   };
 
   return (
-    <div className="hero bg-base-200 h-[90vh]">
+    <div className="hero bg-white h-[90vh]">
       <div className="hero-content flex-col ">
         <div className="card bg-base-100 w-screen max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
