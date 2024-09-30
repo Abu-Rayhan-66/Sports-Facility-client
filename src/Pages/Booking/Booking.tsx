@@ -131,7 +131,6 @@ const Booking = () => {
     try {
       const res = await createBooking(bookingData).unwrap();
       console.log(res.data.newBooking._id)
-      // setBookingId(res.data.newBooking._id);
       toast.success("Booking created successfully!", { id: toastId });
       console.log("Booking created successfully:", res);
       window.location.href = res.data.paymentInfo.payment_url

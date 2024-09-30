@@ -2,7 +2,7 @@
 
 const PurposeAndValue = () => {
     return (
-        <div className=" md:flex md:justify-between   max-w-7xl mx-4 md:mx-auto md:gap-6  ">
+        <div className=" md:flex md:justify-between   max-w-7xl mx-4 md:mx-auto md:gap-3 mb-10 bg-[#f4f2ee]">
 
         <div className="flex-1 ">
         <div className="bg-red-400 p-4 rounded-md">

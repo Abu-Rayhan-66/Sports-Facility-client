@@ -7,10 +7,10 @@ const AboutUs = () => {
   return (
     <div className="mt-24">
       <div>
+        <HistoryAndMilestone></HistoryAndMilestone>
+        <MeetOurTeam></MeetOurTeam>
         <ContactDetails></ContactDetails>
         <PurposeAndValue></PurposeAndValue>
-        <MeetOurTeam></MeetOurTeam>
-        <HistoryAndMilestone></HistoryAndMilestone>
       </div>
     </div>
   );

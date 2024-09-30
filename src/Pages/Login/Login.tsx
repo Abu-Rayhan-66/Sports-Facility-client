@@ -71,9 +71,9 @@ const Login = () => {
               </div>
               <label className="label">
                 <h4>
-                  Already have an account?{" "}
+                  New to this website?{" "}
                   <Link to="/register" className="text-red-400">
-                    Login
+                    Create an account
                   </Link>
                 </h4>
               </label>

@@ -18,6 +18,7 @@ import FacilityDetails from "../Pages/FacilityDetails/FacilityDetails";
 import Booking from "../Pages/Booking/Booking";
 import UpdateFacility from "../Pages/UpdateFacility/UpdateFacility";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import ProtectedRoute from "../Layouts/MainLayout/ProtectedRoute";
 
 
 
@@ -64,7 +65,7 @@ const Router = createBrowserRouter([
         },
         {
           path:"/booking/:id",
-            element:<Booking></Booking>
+            element:<ProtectedRoute><Booking></Booking></ProtectedRoute>
         },
         
         
@@ -72,7 +73,7 @@ const Router = createBrowserRouter([
     },
     {
       path:"/dashboard",
-      element:<Dashboard></Dashboard>,
+      element:<ProtectedRoute><Dashboard></Dashboard></ProtectedRoute>,
       children:[
         {
           path:"/dashboard/bookings",

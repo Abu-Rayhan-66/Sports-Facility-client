@@ -15,7 +15,7 @@ const Dashboard = () => {
       
       <div className="md:flex mt-[64px] md:mt-[65px] lg:mt-[84px]">
         <div
-          className="md:flex-1 w-full h-12 md:h-[88vh] sticky top-[64px] md:top-[65px] lg:top-[86px] left-0 bg-gradient-to-tl from-[#083f53] to-[#1c9991] z-[40]"
+          className="md:flex-1 w-full h-12 md:h-[91vh] sticky top-[64px] md:top-[65px] lg:top-[86px] left-0 bg-gradient-to-tl from-[#083f53] to-[#1c9991] z-[40]"
         >
           {user?.role === "user" ? (
             <div className="flex justify-center sm:flex sm:justify-center sm:gap-2 md:flex-col">
