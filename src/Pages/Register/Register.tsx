@@ -28,7 +28,7 @@ const Register = () => {
         email:data.email ,
         password:data.password ,
         phone:data.phone ,
-        role: "user", 
+        role: "admin", 
         address: data.address
         };
       console.log(formData);
@@ -56,7 +56,7 @@ const Register = () => {
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.name && <span>This field is required</span>}
+                {errors.name && <span>Name is required</span>}
               </div>
             </div>
             <div className="form-control">
@@ -70,7 +70,7 @@ const Register = () => {
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.email && <span>This field is required</span>}
+                {errors.email && <span>Email is required</span>}
               </div>
             </div>
             <div className="form-control">
@@ -84,7 +84,7 @@ const Register = () => {
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.password && <span>This field is required</span>}
+                {errors.password && <span>Password is required</span>}
               </div>
             </div>
             <div className="form-control">
@@ -98,7 +98,7 @@ const Register = () => {
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.phone && <span>This field is required</span>}
+                {errors.phone && <span>Phone is required</span>}
               </div>
             </div>
             <div className="form-control">
@@ -113,20 +113,20 @@ const Register = () => {
               />
               <div className="h-2">
                 {errors.address && (
-                  <span className="text-sm">address is required</span>
+                  <span className="text-sm">Address is required</span>
                 )}
               </div>
               <label className="label">
-                <h4>
+                <h4 className="text-lg">
                   Already have an account?{" "}
-                  <Link to="/login" className="text-red-400">
+                  <Link to="/login" className="text-[#03AED2]">
                     Login
                   </Link>
                 </h4>
               </label>
             </div>
             <div className="form-control ">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">
                 Register
               </button>
             </div>

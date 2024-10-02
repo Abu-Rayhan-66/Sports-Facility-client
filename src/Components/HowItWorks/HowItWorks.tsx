@@ -3,7 +3,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const HowItWorks = () => {
   return (
-    <div id="education" className='bg-[#f4f2ee]'>
+    <div id="education" className='bg-gray-100'>
             <h2 className="text-3xl font-semibold text-center mt-10 mb-10 uppercase">How It Works</h2>
             
             <VerticalTimeline>

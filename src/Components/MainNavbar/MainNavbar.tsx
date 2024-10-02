@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RootState } from "../../Redux/store";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { User, logout } from "../../Redux/Features/auth/authSlice";
@@ -95,6 +95,11 @@ const MainNavbar = () => {
               </ul>
             </div>
             {user ? <a className="btn btn-ghost text-xl text-white">{user.name}</a> : ""}
+            <div>
+            <Link to="/">
+          <img className="rounded-full size-12" src="https://i.ibb.co.com/JcVyrjg/Screenshot-3.png" alt="" />
+            </Link>
+          </div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navigationButton}</ul>

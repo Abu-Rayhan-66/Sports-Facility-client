@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { RootState } from "../../Redux/store";
 import { logout } from "../../Redux/Features/auth/authSlice";
@@ -97,10 +97,16 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-[#1c9991] rounded-box z-[50] mt-3 w-52 p-2 shadow"
             >
+              
               {navigationButton}
             </ul>
           </div>
           {user ? <a className="btn btn-ghost text-xl text-white">{user.name}</a> : ""}
+          <div>
+            <Link to="/">
+          <img className="rounded-full size-12" src="https://i.ibb.co.com/JcVyrjg/Screenshot-3.png" alt="" />
+            </Link>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navigationButton}</ul>

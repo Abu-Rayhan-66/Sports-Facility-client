@@ -24,7 +24,8 @@ const FacilityDetails = () => {
   const facility = data.data
 
     return (
-      <div className=" mt-24 max-w-4xl mx-auto bg-slate-300 rounded-md">
+     <div className="min-h-[70vh]">
+       <div className=" mt-24 max-w-4xl mx-auto bg-slate-300 rounded-md">
       <div className="md:flex gap-6">
        <div className="flex-1">
        <img className="h-96 rounded-md w-full" src={facility.image} alt="" />
@@ -39,6 +40,7 @@ const FacilityDetails = () => {
       </div>
      
  </div>
+     </div>
     );
 };
 

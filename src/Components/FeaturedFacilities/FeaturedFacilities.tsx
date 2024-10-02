@@ -26,7 +26,7 @@ const FeaturedFacilities = () => {
       }
 
     return (
-        <div>
+        <div className="bg-[#f3f4f6]">
             <div>
         <input
           type="text"
@@ -40,14 +40,14 @@ const FeaturedFacilities = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10  max-w-7xl mx-auto mt-10">
             {
                 data?.data.slice(0,6).map((item:Inputs)=>(
-                    <div key={item._id} className="card card-compact  rounded-md border-[#03AED2] border-[1px] shadow-sm hover:shadow-[#03AED2]">
+                    <div key={item._id} className="bg-white card card-compact  rounded-md  shadow-sm hover:shadow-[#03AED2]">
               <figure>
                 <img className="h-40 w-full" src={item.image} alt="Facility image" />
               </figure>
               <div className="card-body">
                 <h2 className="text-lg font-semibold text-black">{item.name}</h2>
                 <p className="text-lg text-black">Price per hour: {item.pricePerHour}</p>
-                <p className="text-lg text-black">{item.description}</p>
+                <p className="text-lg text-black h-32">{item.description}</p>
                 <div className="card-actions justify-end">
                   <Link to={`/facilityDetails/${item._id}`}>
                     <button className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">View Details</button>
@@ -60,7 +60,7 @@ const FeaturedFacilities = () => {
             
           </div>
           <div className="flex justify-center mt-4 mb-10">
-            <button  className=" py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium"><Link to={"/facility"}>See All</Link></button>
+            <button  className=" py-1 px-4 mb-6  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium"><Link to={"/facility"}>See All</Link></button>
             </div>
         </div>
     );

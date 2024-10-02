@@ -6,7 +6,7 @@ import { TBooking } from "../MyBookings/MyBookings";
 const BookingManagement = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 2;
+  const itemsPerPage = 10;
 
     const {data, isLoading, error} = useGetAllBookingQuery({
         page:currentPage,
@@ -27,7 +27,6 @@ const BookingManagement = () => {
         return <div>Error: Something went wrong</div>;
     }
 
-    // Check if data exists and contains facilities
     if (!data || !data.data || data.data.length === 0) {
         return <div>No facilities found</div>;
     }
@@ -90,7 +89,7 @@ const BookingManagement = () => {
               <span className="py-1 px-2">Page {currentPage}</span>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
-                disabled={data && data.data.length < 2} // Disable if less than limit
+                disabled={data && data.data.length < 10} 
                 className="py-1 px-4 bg-[#03AED2] text-white rounded-md ml-2 disabled:opacity-50"
               >
                 Next

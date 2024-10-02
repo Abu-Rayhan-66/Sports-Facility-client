@@ -32,7 +32,7 @@ const ContactUs = () => {
     <div className=" max-w-7xl mx-auto mt-24 mb-10">
       <ContactDetails></ContactDetails>
       <div className="md:flex md:gap-4 md:items-center mx-4 bg-[#f4f2ee]">
-        <div className="flex-1 p-4 bg-slate-300">
+        <div className="flex-1 p-4 bg-[#1c9991]">
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2 className="mb-2 text-lg  ">Name</h2>
             <input

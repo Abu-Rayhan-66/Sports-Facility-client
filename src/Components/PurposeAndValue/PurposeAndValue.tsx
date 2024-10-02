@@ -5,7 +5,7 @@ const PurposeAndValue = () => {
         <div className=" md:flex md:justify-between   max-w-7xl mx-4 md:mx-auto md:gap-3 mb-10 bg-[#f4f2ee]">
 
         <div className="flex-1 ">
-        <div className="bg-red-400 p-4 rounded-md">
+        <div className="bg-[#1c9991] p-4 rounded-md">
           <h2 className="text-3xl font-semibold text-center mb-6 text-white uppercase">Our purpose</h2>
 
           <h3 className=" text-white text-xl font-medium ">Promote Active Lifestyles</h3>
@@ -31,7 +31,7 @@ const PurposeAndValue = () => {
         </div>
         </div>
         <div className="flex-1 ">
-         <div className="bg-blue-600 p-4 rounded-md">
+         <div className="bg-[#03AED2] p-4 rounded-md">
          <h2 className="text-3xl font-semibold text-center mb-6 text-white uppercase">value</h2>
 
          <h3 className=" text-white text-xl font-medium ">Integrity</h3>

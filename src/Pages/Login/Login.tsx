@@ -45,14 +45,13 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                defaultValue={"rayhan@gmail.com"}
                 {...register("email", { required: true })}
                 type="email"
                 placeholder="Email"
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.email && <span>This field is required</span>}
+                {errors.email && <span>Email is required</span>}
               </div>
             </div>
             <div className="form-control">
@@ -60,26 +59,25 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                defaultValue={123456}
                 {...register("password", { required: true })}
                 type="password"
                 placeholder="Password"
                 className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
-                {errors.password && <span>This field is required</span>}
+                {errors.password && <span>Password is required</span>}
               </div>
               <label className="label">
-                <h4>
-                  New to this website?{" "}
-                  <Link to="/register" className="text-red-400">
+                <h4 className="text-lg ">
+                  New to this website?
+                  <Link to="/register" className="text-[#03AED2] ">
                     Create an account
                   </Link>
                 </h4>
               </label>
             </div>
             <div className="form-control ">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">
                 Login
               </button>
             </div>

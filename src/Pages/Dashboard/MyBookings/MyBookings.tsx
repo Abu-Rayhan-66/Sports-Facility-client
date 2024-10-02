@@ -35,7 +35,7 @@ export type TBooking = {
 const MyBookings = () => {
   const user = useAppSelector((state: RootState) => state.auth.userData);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 2;
+  const itemsPerPage = 10;
   
   const { data, isLoading, error } = useGetSpecificUserBookingQuery({
     userId: user?._id,
@@ -192,7 +192,7 @@ const MyBookings = () => {
   <span className="py-1 px-2">Page {currentPage}</span>
   <button
     onClick={() => handlePageChange(currentPage + 1)}
-    disabled={data && data.data.length < 2} 
+    disabled={data && data.data.length < 10} 
     className="py-1 px-4 bg-[#03AED2] text-white rounded-md ml-2 disabled:opacity-50"
   >
     Next

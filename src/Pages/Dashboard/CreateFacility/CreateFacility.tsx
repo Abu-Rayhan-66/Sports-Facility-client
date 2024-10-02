@@ -53,7 +53,7 @@ const CreateFacility = () => {
                 {...register("name", { required: true })}
                 type="text"
                 placeholder="Name"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.name && <span>Name is required</span>}
@@ -67,7 +67,7 @@ const CreateFacility = () => {
                 {...register("description", { required: true })}
                 type="text"
                 placeholder="Description"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.description && <span>Description is required</span>}
@@ -81,7 +81,7 @@ const CreateFacility = () => {
                 {...register("pricePerHour", { required: true })}
                 type="text"
                 placeholder="Price Per Hour"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.pricePerHour && <span>Price Per Hour is required</span>}
@@ -95,7 +95,7 @@ const CreateFacility = () => {
                 {...register("location", { required: true })}
                 type="text"
                 placeholder="Location"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.location && <span>Location is required</span>}
@@ -109,7 +109,7 @@ const CreateFacility = () => {
                 {...register("image", { required: true })}
                 type="text"
                 placeholder="Image"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2 mb-4">
                 {errors.image && (
@@ -119,7 +119,7 @@ const CreateFacility = () => {
               
             </div>
             <div className="form-control ">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">
                 Create
               </button>
             </div>

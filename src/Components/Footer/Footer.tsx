@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="footer bg-neutral text-neutral-content p-10">
+        <footer className="footer bg-gradient-to-tr from-[#083f53] to-[#1c9991] text-neutral-content p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover"><Link to="/facility">facility</Link></a>

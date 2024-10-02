@@ -52,7 +52,7 @@ const AddAdmin = () => {
                 {...register("name", { required: true })}
                 type="text"
                 placeholder="Name"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.name && <span>This field is required</span>}
@@ -66,7 +66,7 @@ const AddAdmin = () => {
                 {...register("email", { required: true })}
                 type="email"
                 placeholder="Email"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.email && <span>This field is required</span>}
@@ -80,7 +80,7 @@ const AddAdmin = () => {
                 {...register("password", { required: true })}
                 type="password"
                 placeholder="Password"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.password && <span>This field is required</span>}
@@ -94,7 +94,7 @@ const AddAdmin = () => {
                 {...register("phone", { required: true })}
                 type="text"
                 placeholder="Phone"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2">
                 {errors.phone && <span>This field is required</span>}
@@ -108,7 +108,7 @@ const AddAdmin = () => {
                 {...register("address", { required: true })}
                 type="text"
                 placeholder="Address"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
               />
               <div className="h-2 mb-4">
                 {errors.address && (
@@ -118,7 +118,7 @@ const AddAdmin = () => {
               
             </div>
             <div className="form-control ">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">
                 Create Admin
               </button>
             </div>

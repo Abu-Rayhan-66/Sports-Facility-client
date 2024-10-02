@@ -8,7 +8,7 @@ import { toast } from "sonner";
 const AllFacility = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 10;
   const { data, isLoading, error } = useGetAllFacilityQuery({
     searchTerm,
     page: currentPage,
@@ -35,7 +35,7 @@ const AllFacility = () => {
   }
 
   if (error) {
-    return <div>Error: Something went wrong</div>;
+    return <div>No facilities found</div>;
   }
 
 
@@ -114,7 +114,7 @@ const AllFacility = () => {
               <span className="py-1 px-2">Page {currentPage}</span>
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
-                disabled={data && data.data.length < 7} 
+                disabled={data && data.data.length < 10} 
                 className="py-1 px-4 bg-[#03AED2] text-white rounded-md ml-2 disabled:opacity-50"
               >
                 Next

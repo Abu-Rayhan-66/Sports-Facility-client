@@ -2,9 +2,9 @@ import Marquee from "react-fast-marquee";
 
 const CustomerTestimonials = () => {
   return (
-   <div>
+   <div className="">
     <h2 className="text-3xl font-semibold text-center mt-10 mb-4 uppercase">Customer Testimonial</h2>
-     <div className="bg-gray-100 py-8 max-w-7xl mx-auto">
+     <div className="bg-gray-100 py-8 max-w-7xl  mx-auto">
       <Marquee direction="left" speed={50} pauseOnHover gradient={false}>
         <div className="flex space-x-8">
           <div className="bg-white p-4 shadow-lg rounded-md w-72 text-center">
@@ -31,4 +31,4 @@ const CustomerTestimonials = () => {
   );
 };
 
-export default CustomerTestimonials;
+export default CustomerTestimonials; 

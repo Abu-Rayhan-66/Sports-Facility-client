@@ -1,4 +1,4 @@
-# How you run this server locally.
+# This is how you run this client site locally.
 
 ## Step: 1 
 Download the repo by following command :

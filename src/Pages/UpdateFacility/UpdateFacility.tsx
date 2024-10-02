@@ -81,8 +81,9 @@ const UpdateFacility = () => {
                 {...register("name", { required: true })}
                 type="text"
                 placeholder="Name"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
                 defaultValue={facility.name}
+                
               />
               <div className="h-2">
                 {errors.name && <span>Name is required</span>}
@@ -96,7 +97,7 @@ const UpdateFacility = () => {
                 {...register("description", { required: true })}
                 type="text"
                 placeholder="Description"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
                 defaultValue={facility.description}
               />
               <div className="h-2">
@@ -111,7 +112,7 @@ const UpdateFacility = () => {
                 {...register("pricePerHour", { required: true })}
                 type="text"
                 placeholder="Price Per Hour"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
                 defaultValue={facility.pricePerHour}
               />
               <div className="h-2">
@@ -126,7 +127,7 @@ const UpdateFacility = () => {
                 {...register("location", { required: true })}
                 type="text"
                 placeholder="Location"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
                 defaultValue={facility.location}
               />
               <div className="h-2">
@@ -141,7 +142,7 @@ const UpdateFacility = () => {
                 {...register("image", { required: true })}
                 type="text"
                 placeholder="Image"
-                className="input input-bordered"
+                className="py-1 w-full rounded-md border-[2px] focus:border-[#1b918b] focus:outline-none  border-[#03AED2]"
                 defaultValue={facility.image}
               />
               <div className="h-2 mb-4">
@@ -152,8 +153,8 @@ const UpdateFacility = () => {
               
             </div>
             <div className="form-control ">
-              <button type="submit" className="btn btn-primary">
-                Create
+              <button type="submit" className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium">
+                Update
               </button>
             </div>
           </form>

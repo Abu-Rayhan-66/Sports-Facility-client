@@ -153,7 +153,8 @@ const Booking = () => {
   }
 
   return (
-    <div className="mt-24 max-w-2xl mx-auto ">
+    <div className="min-h-[70vh]">
+      <div className="mt-24 max-w-2xl mx-auto ">
       <div className="w-full ">
        
         <div className="relative">
@@ -272,6 +273,7 @@ const Booking = () => {
         </div>
         
       )}
+    </div>
     </div>
   );
 };
