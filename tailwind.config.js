@@ -6,9 +6,19 @@ export default {
   ],
   theme: {
     extend: {
-      // fontFamily:{
-      //   bebasNeue:["Bebas-Neue"]
-      // }
+      fontFamily: {
+        Saira: ['saira', 'sans-serif'], 
+      },
+      keyframes: {
+        rotateY: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
+      },
+      animation: {
+        rotateY: 'rotateY 1s linear forwards',
+      },
+        
     },
   },
   plugins: [

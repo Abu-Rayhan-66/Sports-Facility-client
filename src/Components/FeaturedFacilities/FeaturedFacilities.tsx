@@ -36,13 +36,13 @@ const FeaturedFacilities = () => {
           className="border p-2 rounded mb-4 hidden"
         />
       </div>
-      <h2 className="text-3xl font-semibold text-center mt-10 uppercase">popular facilities</h2>
+      <h2  className="font-Saira text-3xl font-semibold text-center pt-20 uppercase">popular facilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10  max-w-7xl mx-auto mt-10">
             {
                 data?.data.slice(0,6).map((item:Inputs)=>(
                     <div key={item._id} className="bg-white card card-compact  rounded-md  shadow-sm hover:shadow-[#03AED2]">
               <figure>
-                <img className="h-40 w-full" src={item.image} alt="Facility image" />
+                <img className="h-[250px] p-4 rounded-md w-full" src={item.image} alt="Facility image" />
               </figure>
               <div className="card-body">
                 <h2 className="text-lg font-semibold text-black">{item.name}</h2>

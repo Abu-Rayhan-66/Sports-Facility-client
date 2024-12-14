@@ -19,6 +19,7 @@ const Facility = () => {
     limit:itemsPerPage,
     isDeleted: false, 
   });
+  // const { data, isLoading, error } = useGetAllFacilityQuery();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value); 

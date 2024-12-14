@@ -1,15 +1,14 @@
-import { Outlet, useLocation } from "react-router-dom";
-import MainNavbar from "../../Components/MainNavbar/MainNavbar";
+import { Outlet } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
 
 
 
 const MainLayout = () => {
-const location = useLocation()
 
     return (
         <div className="">
-           {location.pathname !== "/" && <MainNavbar />}
+          <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

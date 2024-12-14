@@ -15,37 +15,47 @@ const Navbar = () => {
 
   const navigationButton = (
     <>
-      <h2 className="text-white font-medium uppercase text-lg m-3">
+      <h2 className="text-black font-semibold text-lg py-4 mr-5 font-Saira ">
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ? "text-[#002966]" : ""
           }
         >
-          home
+          Home
         </NavLink>
       </h2>
-      <h2 className="text-white font-medium uppercase text-lg m-3">
-        <NavLink to="/about" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
-          }>about</NavLink>
+      <h2 className="text-black font-semibold  text-lg py-4 mr-5 font-Saira">
+        <NavLink
+          to="/facility"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#03AED2]" : ""
+          }
+        >
+          All Facilities
+        </NavLink>
       </h2>
-      <h2 className="text-white font-medium uppercase text-lg m-3">
+      <h2 className="text-black font-semibold  text-lg py-4 mr-5 font-Saira">
+        <NavLink to="/about" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ?  "text-[#03AED2]" : ""
+          }>About</NavLink>
+      </h2>
+      <h2 className="text-black font-semibold  text-lg py-4 mr-5 font-Saira">
         <NavLink
           to="/contact"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2] rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ?  "text-[#03AED2]" : ""
           }
         >
-          contact
+          Contact
         </NavLink>
       </h2>
       {
-        user ?  <h2 className="text-white font-medium uppercase text-lg m-3">
+        user ?  <h2 className="text-black font-semibold  text-lg py-4 mr-5 font-Saira">
         <NavLink
           to="/dashboard"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#03AED2] border-2 border-[#03AED2]  rounded-tl-xl rounded-br-xl p-1" : ""
+            isPending ? "pending" : isActive ?  "text-[#03AED2]" : ""
           }
         >
           Dashboard
@@ -68,13 +78,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-3000 ease-in-out ${
+      className={`sticky top-0 z-50 w-full  transition-all duration-3000 ease-in-out ${
         isScrolled
-          ? "bg-gradient-to-l from-[#083f53] to-[#1c9991] border-b-[1px] border-slate-400"
-          : "bg-transparent border-none"
+          ? "bg-white border-b border-black/[0.145]"
+          : "bg-white border-b border-black/[0.145]"
       }`}
     >
-      <div className="navbar bg-transparent">
+      <div className="navbar max-w-7xl mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -101,7 +111,7 @@ const Navbar = () => {
               {navigationButton}
             </ul>
           </div>
-          {user ? <a className="btn btn-ghost text-xl text-white">{user.name}</a> : ""}
+          {user ? <a className="btn btn-ghost text-xl text-black">{user.name}</a> : ""}
           <div>
             <Link to="/">
           <img className="rounded-full size-12" src="https://i.ibb.co.com/JcVyrjg/Screenshot-3.png" alt="" />
@@ -112,7 +122,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navigationButton}</ul>
         </div>
         <div className="navbar-end">
-        {user ? <button onClick={handleLOgOut} className="py-1 px-4  text-white rounded-tl-md rounded-br-md bg-[#03AED2] text-lg font-medium"><NavLink to="/login">SignOut</NavLink></button>  :<button className="py-1 px-4 rounded-tl-md rounded-br-md text-white bg-[#03AED2] text-lg font-medium "><NavLink to="/login">Login</NavLink></button> 
+        {user ? <button onClick={handleLOgOut} className="py-1 px-4  text-white  bg-black text-lg font-medium"><NavLink to="/login">SignOut</NavLink></button>  :<button className="py-1 px-4  text-white bg-black text-lg font-medium "><NavLink to="/login">Login</NavLink></button> 
              
         }
 
